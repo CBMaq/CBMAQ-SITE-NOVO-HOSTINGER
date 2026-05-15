@@ -4,16 +4,10 @@
   "private": true,
   "description": "CBMaq Institutional Website",
   "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "node server.js",
-  "lint": "eslint ."
-},
-  "scripts": {
-    "dev": "npm run dev --workspace=apps/web",
-    "build": "npm run build --workspace=apps/web",
-    "start": "npm run start --workspace=apps/web",
-    "lint": "npm run lint --workspaces"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node server.js",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@types/pg": "^8.20.0",
