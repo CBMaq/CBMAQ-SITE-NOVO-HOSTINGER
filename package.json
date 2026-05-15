@@ -9,11 +9,14 @@
     "start": "node server.js",
     "lint": "eslint ."
   },
+  "dependencies": {
+    "next": "^15.5.12",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "pg": "^8.20.0"
+  },
   "devDependencies": {
     "@types/pg": "^8.20.0",
     "prisma": "^6.19.2"
-  },
-  "dependencies": {
-    "pg": "^8.20.0"
   }
 }
