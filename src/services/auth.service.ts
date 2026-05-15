@@ -1,26 +1,25 @@
-import { RegisterUserDTO } from "@app-commemore/shared";
 import { userRepo } from "../repositories/user.repo";
 import { AppError } from "@/lib/errors";
+import { Role, User } from "@prisma/client";
 
-export class AuthService {
-  async register(data: RegisterUserDTO) {
+type RegisterUserDTO = {
+  name: string;
+  email: string;
+  password: string;
+};
+
+class AuthService {
+  async register(data: RegisterUserDTO): Promise<User> {
     const existingUser = await userRepo.findByEmail(data.email);
+
     if (existingUser) {
-      throw new AppError("A user with this email already exists.", "CONFLICT");
+      throw new AppError("Usuário já existe", 400);
     }
 
-    // Default to MEMBER upon registration
-    const user = await userRepo.createUser({
+    return await userRepo.createUser({
       ...data,
-      role: 'MEMBER'
+      role: Role.USER,
     });
-
-    return {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      role: user.role,
-    };
   }
 }
 
