@@ -18,7 +18,7 @@ class AuthService {
 
     return await userRepo.createUser({
       ...data,
-      role: Role.USER,
+      role: Role.MEMBER,
     });
   }
 }
