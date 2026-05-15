@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "description": "CBMaq Institutional Website",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "node server.js",
+  "lint": "eslint ."
+},
   "scripts": {
     "dev": "npm run dev --workspace=apps/web",
     "build": "npm run build --workspace=apps/web",
