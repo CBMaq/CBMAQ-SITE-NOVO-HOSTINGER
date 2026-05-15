@@ -1,0 +1,367 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================================================
+   CBMaq Design System — Global Tokens
+   ================================================================
+   All brand colors, typography, spacing, shadows, and radius values
+   are centralized here. Components MUST reference these tokens
+   instead of hardcoding values.
+   ================================================================ */
+
+@theme {
+  /* — Typography Global — */
+  --font-sans: var(--font-plus-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-serif: var(--font-plus-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* — Brand Colors — */
+  --color-cbmaq-navy: #0A2A5E;
+  --color-cbmaq-navy-deep: #061E45;
+  --color-cbmaq-navy-light: #14407A;
+  --color-cbmaq-blue: #0A4EE4;
+  --color-cbmaq-blue-light: #3B82F6;
+  --color-cbmaq-blue-accent: #60A5FA;
+  --color-cbmaq-gold: #D4A438;
+  --color-cbmaq-gray-50: #F8F9FA;
+  --color-cbmaq-gray-100: #F1F3F5;
+  --color-cbmaq-gray-200: #E9ECEF;
+  --color-cbmaq-gray-300: #DEE2E6;
+  --color-cbmaq-gray-400: #ADB5BD;
+  --color-cbmaq-gray-500: #6C757D;
+  --color-cbmaq-gray-600: #495057;
+  --color-cbmaq-gray-700: #343A40;
+  --color-cbmaq-gray-800: #212529;
+  --color-cbmaq-white: #FFFFFF;
+
+  /* — Semantic Colors (Tailwind mapping) — */
+  --color-background: #ffffff;
+  --color-foreground: #212529;
+
+  --color-primary: #0A2A5E;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #0A4EE4;
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: #F1F3F5;
+  --color-accent-foreground: #212529;
+
+  --color-muted: #F8F9FA;
+  --color-muted-foreground: #6C757D;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #212529;
+
+  --color-border: #E9ECEF;
+
+  /* — Radius — */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-pill: 9999px;
+
+  /* — Shadows — */
+  --shadow-sm: 0 1px 2px 0 rgba(10, 42, 94, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(10, 42, 94, 0.07), 0 2px 4px -2px rgba(10, 42, 94, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(10, 42, 94, 0.08), 0 4px 6px -4px rgba(10, 42, 94, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(10, 42, 94, 0.1), 0 8px 10px -6px rgba(10, 42, 94, 0.04);
+  --shadow-card: 0 2px 16px rgba(10, 42, 94, 0.08);
+  --shadow-card-hover: 0 8px 30px rgba(10, 42, 94, 0.14);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    @apply bg-background text-foreground;
+  }
+
+  /* — Typography Hierarchy — */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--color-cbmaq-navy);
+  }
+
+  h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
+  h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); }
+  h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+
+  p {
+    @apply font-sans;
+    color: var(--color-cbmaq-gray-600);
+  }
+
+  label, input, button, select, textarea {
+    @apply font-sans;
+  }
+}
+
+/* ================================================================
+   Utility Layer — Reusable section patterns
+   ================================================================ */
+@layer utilities {
+  /* — Layout containers — */
+  .section-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  /* — Section vertical spacing — */
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  /* — Section label chip — */
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-cbmaq-blue);
+    background-color: rgba(26, 95, 180, 0.08);
+    padding: 0.375rem 1rem;
+    border-radius: var(--radius-pill);
+    margin-bottom: 1rem;
+  }
+
+  /* — Gradient overlays — */
+  .overlay-dark {
+    background: linear-gradient(
+      135deg,
+      rgba(6, 30, 69, 0.88) 0%,
+      rgba(10, 42, 94, 0.72) 50%,
+      rgba(26, 95, 180, 0.55) 100%
+    );
+  }
+
+  /* — Card base — */
+  .card-elevated {
+    background: var(--color-cbmaq-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  /* — Pill card (ecosystem) — */
+  .card-pill {
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* — Stat number style — */
+  .stat-number {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--color-cbmaq-navy);
+    line-height: 1;
+  }
+
+  /* — CTA Button brand — */
+  .btn-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-md);
+    background-color: var(--color-cbmaq-blue);
+    color: var(--color-cbmaq-white);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-brand:hover {
+    background-color: #083DB4;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-brand-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-md);
+    background-color: transparent;
+    color: var(--color-cbmaq-white);
+    border: 2px solid var(--color-cbmaq-white);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+
+  .btn-brand-outline:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+  }
+
+  /* — Pillar numbering — */
+  .pillar-number {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: clamp(3rem, 5vw, 5rem);
+    color: rgba(255, 255, 255, 0.12);
+    line-height: 1;
+  }
+
+  /* — Hide Scrollbar — */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ================================================================
+   shadcn/Radix variable bridge (preserves compatibility)
+   ================================================================ */
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.17 0.005 285);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.17 0.005 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.17 0.005 285);
+  --primary: oklch(0.28 0.08 260);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.44 0.12 260);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.97 0.002 260);
+  --muted-foreground: oklch(0.55 0.01 260);
+  --accent: oklch(0.96 0.003 260);
+  --accent-foreground: oklch(0.17 0.005 285);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.003 260);
+  --input: oklch(0.92 0.003 260);
+  --ring: oklch(0.44 0.12 260);
+  --chart-1: oklch(0.809 0.105 251.813);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.546 0.245 262.881);
+  --chart-4: oklch(0.488 0.243 264.376);
+  --chart-5: oklch(0.424 0.199 265.638);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+@theme inline {
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
