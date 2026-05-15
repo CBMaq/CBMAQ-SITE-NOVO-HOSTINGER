@@ -1,14 +1,23 @@
-const { spawn } = require("child_process");
+const next = require("next");
+const { createServer } = require("http");
 
-const app = spawn("npm", ["start", "--workspace=apps/web"], {
-  stdio: "inherit",
-  shell: true,
-  env: {
-    ...process.env,
-    PORT: process.env.PORT || "3000",
-  },
+const dev = false;
+const hostname = "0.0.0.0";
+const port = parseInt(process.env.PORT || "3000", 10);
+
+const app = next({
+  dev,
+  dir: __dirname,
+  hostname,
+  port,
 });
 
-app.on("close", (code) => {
-  process.exit(code);
+const handle = app.getRequestHandler();
+
+app.prepare().then(() => {
+  createServer((req, res) => {
+    handle(req, res);
+  }).listen(port, hostname, () => {
+    console.log(`> Ready on http://${hostname}:${port}`);
+  });
 });
