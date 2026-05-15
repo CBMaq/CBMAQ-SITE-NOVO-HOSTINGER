@@ -1,7 +1,12 @@
 import { db } from "@/lib/db";
-import { RegisterUserDTO } from "@app-commemore/shared";
 import { Role, User } from "@prisma/client";
 import bcrypt from "bcrypt";
+
+type RegisterUserDTO = {
+  name: string;
+  email: string;
+  password: string;
+};
 
 export class UserRepo {
   async findByEmail(email: string): Promise<User | null> {
@@ -12,7 +17,7 @@ export class UserRepo {
 
   async createUser(data: RegisterUserDTO & { role: Role }): Promise<User> {
     const hashedPassword = await bcrypt.hash(data.password, 10);
-    
+
     return await db.user.create({
       data: {
         name: data.name,
