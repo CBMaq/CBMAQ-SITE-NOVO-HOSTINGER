@@ -13,7 +13,7 @@ class AuthService {
     const existingUser = await userRepo.findByEmail(data.email);
 
     if (existingUser) {
-      throw new AppError("Usuário já existe", 400);
+      throw new AppError("Usuário já existe");
     }
 
     return await userRepo.createUser({
