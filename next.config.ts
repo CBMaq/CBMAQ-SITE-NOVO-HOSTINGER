@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  trailingSlash: true,
   transpilePackages: ["@app-commemore/shared"],
   images: {
     formats: ['image/avif', 'image/webp'],
