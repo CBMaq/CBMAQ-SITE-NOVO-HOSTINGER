@@ -13,6 +13,7 @@ const PLANS_DATA = {
   implementos: [80000, 150000, 250000],
 };
 
+
 const CATEGORIES = [
   { id: "maquinas", label: "Máquinas" },
   { id: "caminhoes", label: "Caminhões" },
