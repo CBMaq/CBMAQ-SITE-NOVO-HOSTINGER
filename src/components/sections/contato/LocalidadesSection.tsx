@@ -22,7 +22,7 @@ const units: Unit[] = [
     state: "DF",
     address: "Setor SCIA Quadra 14 Conjunto 11 Lote 04 Parte A, Zona Industrial Brasília DF, 71250-155",
     phone: "(61) 3204-0909",
-    whatsapp: "556199983495",
+    whatsapp: "556199834952",
     coords: { x: 61.0, y: 79.0 }
   },
   {
@@ -31,7 +31,7 @@ const units: Unit[] = [
     state: "GO",
     address: "Avenida Sao Francisco, 640 - Santa Genoveva, Goiânia - GO, 74.670-010",
     phone: "(61) 3204-0909",
-    whatsapp: "556199983495",
+    whatsapp: "556199834952",
     coords: { x: 48.0, y: 76.5 }
   },
   {
@@ -40,7 +40,7 @@ const units: Unit[] = [
     state: "GO",
     address: "Rua Parque Marajo, Rua Porto Alegre 04 Quadra13 Lote 04, Parque Marajo Valparaíso de Goiás GO CEP 72874-210",
     phone: "(61) 3204-0909",
-    whatsapp: "556199983495",
+    whatsapp: "556199834952",
     coords: { x: 59.0, y: 81.0 }
   },
   {
@@ -49,7 +49,7 @@ const units: Unit[] = [
     state: "TO",
     address: "Quadra 706 Sul Alameda 6, Nº 29 no bairro Plano Diretor Sul em Palmas - TO, CEP 77022-380.",
     phone: "(61) 3204-0909",
-    whatsapp: "556199983495",
+    whatsapp: "556199834952",
     coords: { x: 55.0, y: 56.0 }
   },
   {
@@ -58,7 +58,7 @@ const units: Unit[] = [
     state: "PA",
     address: "SOL POENTE, 63 - QUADRA119 LOTE 60 ANDAR 2 SALA B. RIO VERDE. PA. CEP: 68515-000",
     phone: "(61) 3204-0909",
-    whatsapp: "556199983495",
+    whatsapp: "556199834952",
     coords: { x: 38.0, y: 32.0 }
   },
   {
@@ -67,7 +67,7 @@ const units: Unit[] = [
     state: "ES",
     address: "Rodovia Governador Mario Covas Portaria B, 256 - Padre Mathias, Cariacica - ES, 29.157-100",
     phone: "(61) 3204-0909",
-    whatsapp: "556199983495",
+    whatsapp: "556199834952",
     coords: { x: 92.5, y: 89.6 }
   }
 ];

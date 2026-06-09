@@ -57,7 +57,7 @@ export function PlanSelector() {
     const creditStr = formatCurrency(simulatorCredit[0]);
     const term = simulatorTerm[0];
     const message = `Olá! Gostaria de falar com um especialista sobre um consórcio. Simulei um crédito de ${creditStr} no prazo de ${term} meses e gostaria de mais informações.`;
-    return `https://wa.me/5561999834952?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/556199834952?text=${encodeURIComponent(message)}`;
   };
 
   return (

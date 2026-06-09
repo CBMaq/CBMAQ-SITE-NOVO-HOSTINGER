@@ -182,7 +182,7 @@ export function FooterSection() {
                 </Link>
               </li>
               <li>
-                <a href="https://wa.me/556199983495" target="_blank" rel="noopener noreferrer" className="text-[0.875rem] text-[#4d5c7e] font-bold transition-colors hover:text-[#0A4EE4]">
+                <a href="https://wa.me/556199834952" target="_blank" rel="noopener noreferrer" className="text-[0.875rem] text-[#4d5c7e] font-bold transition-colors hover:text-[#0A4EE4]">
                   Falar pelo WhatsApp
                 </a>
               </li>

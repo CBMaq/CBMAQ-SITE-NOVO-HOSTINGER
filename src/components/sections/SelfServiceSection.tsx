@@ -19,7 +19,7 @@ const services = [
   {
     id: "whatsapp",
     title: "Falar no\nWhatsApp",
-    href: "https://wa.me/5561999834952",
+    href: "https://wa.me/556199834952",
     img: "https://mfwdxbpejpkyvawaypnj.supabase.co/storage/v1/object/public/service_images/wp.png",
   },
   {

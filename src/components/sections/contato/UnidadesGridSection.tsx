@@ -11,10 +11,10 @@ const unidades = [
     address: "Setor SCIA Quadra 14 Conjunto 11 Lote 04 Parte A, Zona Industrial Brasília DF",
     cep: "71250-155",
     phone: "(61) 3204-0909",
-    whatsapp: "(61) 99983495",
+    whatsapp: "(61) 9983-4952",
     email: "comunicacao@cbmaq.com.br",
     hours: "Segunda a Sexta: 08:00 - 18:00",
-    waLink: "556199983495"
+    waLink: "556199834952"
   },
   {
     city: "Goiânia",
@@ -22,10 +22,10 @@ const unidades = [
     address: "Avenida Sao Francisco, 640 - Santa Genoveva, Goiânia - GO",
     cep: "74.670-010",
     phone: "(61) 3204-0909",
-    whatsapp: "(61) 99983495",
+    whatsapp: "(61) 9983-4952",
     email: "comunicacao@cbmaq.com.br",
     hours: "Segunda a Sexta: 08:00 - 18:00",
-    waLink: "556199983495"
+    waLink: "556199834952"
   },
   {
     city: "Valparaíso",
@@ -33,10 +33,10 @@ const unidades = [
     address: "Rua Parque Marajo, Rua Porto Alegre 04 Quadra13 Lote 04, Parque Marajo Valparaíso de Goiás GO",
     cep: "72874-210",
     phone: "(61) 3204-0909",
-    whatsapp: "(61) 99983495",
+    whatsapp: "(61) 9983-4952",
     email: "comunicacao@cbmaq.com.br",
     hours: "Segunda a Sexta: 08:00 - 18:00",
-    waLink: "556199983495"
+    waLink: "556199834952"
   },
   {
     city: "Palmas",
@@ -44,10 +44,10 @@ const unidades = [
     address: "Quadra 706 Sul Alameda 6, Nº 29 no bairro Plano Diretor Sul em Palmas - TO",
     cep: "77022-380",
     phone: "(61) 3204-0909",
-    whatsapp: "(61) 99983495",
+    whatsapp: "(61) 9983-4952",
     email: "comunicacao@cbmaq.com.br",
     hours: "Segunda a Sexta: 08:00 - 18:00",
-    waLink: "556199983495"
+    waLink: "556199834952"
   },
   {
     city: "Paraupebas",
@@ -55,10 +55,10 @@ const unidades = [
     address: "SOL POENTE, 63 - QUADRA119 LOTE 60 ANDAR 2 SALA B. RIO VERDE. PA.",
     cep: "68515-000",
     phone: "(61) 3204-0909",
-    whatsapp: "(61) 99983495",
+    whatsapp: "(61) 9983-4952",
     email: "comunicacao@cbmaq.com.br",
     hours: "Segunda a Sexta: 08:00 - 18:00",
-    waLink: "556199983495"
+    waLink: "556199834952"
   },
   {
     city: "Cariacica",
@@ -66,10 +66,10 @@ const unidades = [
     address: "Rodovia Governador Mario Covas Portaria B, 256 - Padre Mathias, Cariacica - ES",
     cep: "29.157-100",
     phone: "(61) 3204-0909",
-    whatsapp: "(61) 99983495",
+    whatsapp: "(61) 9983-4952",
     email: "comunicacao@cbmaq.com.br",
     hours: "Segunda a Sexta: 08:00 - 18:00",
-    waLink: "556199983495"
+    waLink: "556199834952"
   }
 ];
 
