@@ -9,6 +9,15 @@ import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 
 const ecosystemCards = [
   {
+    id: "sales",
+    title: "Máquinas e Tratores",
+    description: "Distribuição multimarcas das maiores fabricantes mundiais. Robustez para Agro, Infra e Mineração.",
+    cta: "Ver Máquinas",
+    image: "https://mfwdxbpejpkyvawaypnj.supabase.co/storage/v1/object/public/service_images/maquinas-copy.webp",
+    alt: "Venda de máquinas CBMaq",
+    link: "/maquinas"
+  },
+  {
     id: "finance",
     title: "Consórcios",
     description: "Crédito planejado para renovação e expansão de frota com condições exclusivas para as melhores marcas.",
@@ -43,15 +52,6 @@ const ecosystemCards = [
     image: "https://mfwdxbpejpkyvawaypnj.supabase.co/storage/v1/object/public/service_images/1-8.webp",
     alt: "Licitações CBMaq",
     link: "/vendas-ao-governo"
-  },
-  {
-    id: "sales",
-    title: "Máquinas e Tratores",
-    description: "Distribuição multimarcas das maiores fabricantes mundiais. Robustez para Agro, Infra e Mineração.",
-    cta: "Ver Máquinas",
-    image: "https://mfwdxbpejpkyvawaypnj.supabase.co/storage/v1/object/public/service_images/maquinas-copy.webp",
-    alt: "Venda de máquinas CBMaq",
-    link: "/maquinas"
   },
   {
     id: "ecommerce",
