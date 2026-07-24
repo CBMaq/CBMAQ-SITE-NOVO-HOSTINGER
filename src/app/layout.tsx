@@ -51,6 +51,24 @@ export default function RootLayout({
       className={cn(plusJakarta.variable, inter.variable)}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('error', function(event) {
+                if (event.message && event.message.includes('ChunkLoadError')) {
+                  window.location.reload();
+                }
+              });
+              window.addEventListener('unhandledrejection', function(event) {
+                if (event.reason && (event.reason.name === 'ChunkLoadError' || (event.reason.message && event.reason.message.includes('ChunkLoadError')))) {
+                  window.location.reload();
+                }
+              });
+            `,
+          }}
+        />
+      </head>
       <body
         suppressHydrationWarning
         className={cn("font-sans antialiased min-h-screen bg-background text-foreground flex flex-col", plusJakarta.className)}
