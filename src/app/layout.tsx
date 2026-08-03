@@ -55,16 +55,48 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.addEventListener('error', function(event) {
-                if (event.message && event.message.includes('ChunkLoadError')) {
-                  window.location.reload();
+              (function() {
+                function handleChunkError(err) {
+                  var errMsg = '';
+                  if (typeof err === 'string') {
+                    errMsg = err;
+                  } else if (err && typeof err === 'object') {
+                    errMsg = (err.message || '') + ' ' + (err.name || '') + ' ' + (err.stack || '');
+                  }
+                  
+                  var isChunkError = 
+                    errMsg.indexOf('ChunkLoadError') !== -1 ||
+                    errMsg.indexOf('Loading chunk') !== -1 ||
+                    errMsg.indexOf('failed to fetch dynamically imported module') !== -1 ||
+                    errMsg.indexOf('CSS_CHUNK_LOAD_FAILED') !== -1;
+
+                  if (isChunkError) {
+                    var now = Date.now();
+                    var lastReload = Number(sessionStorage.getItem('chunk_err_reload') || 0);
+                    if (now - lastReload > 10000) {
+                      sessionStorage.setItem('chunk_err_reload', String(now));
+                      window.location.reload();
+                    }
+                  }
                 }
-              });
-              window.addEventListener('unhandledrejection', function(event) {
-                if (event.reason && (event.reason.name === 'ChunkLoadError' || (event.reason.message && event.reason.message.includes('ChunkLoadError')))) {
-                  window.location.reload();
-                }
-              });
+
+                window.addEventListener('error', function(event) {
+                  if (event && event.error) {
+                    handleChunkError(event.error);
+                  } else if (event && event.message) {
+                    handleChunkError(event.message);
+                  }
+                  if (event && event.target && event.target.tagName === 'SCRIPT' && event.target.src && event.target.src.indexOf('/_next/static/') !== -1) {
+                    handleChunkError('ChunkLoadError: Loading chunk failed for ' + event.target.src);
+                  }
+                }, true);
+
+                window.addEventListener('unhandledrejection', function(event) {
+                  if (event && event.reason) {
+                    handleChunkError(event.reason);
+                  }
+                });
+              })();
             `,
           }}
         />
