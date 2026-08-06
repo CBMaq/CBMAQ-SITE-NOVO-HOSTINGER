@@ -96,16 +96,26 @@ export function FooterSection() {
             </h4>
             <ul className="flex flex-col gap-5 items-center md:items-start text-center md:text-left">
               <li>
-                <Link href="#" className="flex flex-col gap-1 text-[0.875rem] text-[#4d5c7e] font-medium transition-colors hover:text-[#0A4EE4] group">
+                <a 
+                  href="https://www.lojacbmaq.com.br/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex flex-col gap-1 text-[0.875rem] text-[#4d5c7e] font-medium transition-colors hover:text-[#0A4EE4] group"
+                >
                   <span className="text-[#4d5c7e] font-medium group-hover:text-[#0A4EE4]">Loja CBMaq —</span>
                   <span>lojacbmaq.com.br</span>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="flex flex-col gap-1 text-[0.875rem] text-[#4d5c7e] font-medium transition-colors hover:text-[#0A4EE4] group">
+                <a 
+                  href="https://lojamahindra.com.br/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex flex-col gap-1 text-[0.875rem] text-[#4d5c7e] font-medium transition-colors hover:text-[#0A4EE4] group"
+                >
                   <span className="text-[#4d5c7e] font-medium group-hover:text-[#0A4EE4]">Loja Mahindra Oficial —</span>
-                  <span>lojamahindraoficial.com.br</span>
-                </Link>
+                  <span>lojamahindra.com.br</span>
+                </a>
               </li>
             </ul>
           </div>

@@ -44,7 +44,7 @@ const megaMenuData = [
     title: "Digital",
     links: [
       { label: "Loja Oficial CBMaq", href: "/ecommerce" },
-      { label: "Loja Oficial Mahindra", href: "#" },
+      { label: "Loja Oficial Mahindra", href: "https://lojamahindra.com.br/" },
       { label: "Loja Oficial Mercado Livre", href: "https://www.mercadolivre.com.br/loja/cbmaq" },
     ]
   },
@@ -116,17 +116,22 @@ export function MegaMenu({ isDark = false, navHeight = "72px" }: { isDark?: bool
                         {column.title}
                       </h4>
                       <ul className="flex flex-col gap-3.5">
-                        {column.links.map((link, linkIdx) => (
-                          <li key={linkIdx}>
-                            <Link 
-                              href={link.href}
-                              className="text-[0.9375rem] text-[#4d5c7e] font-medium transition-all duration-200 hover:text-[#0A4EE4] hover:translate-x-1 inline-block"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {link.label}
-                            </Link>
-                          </li>
-                        ))}
+                        {column.links.map((link, linkIdx) => {
+                          const isExternal = link.href.startsWith("http");
+                          return (
+                            <li key={linkIdx}>
+                              <Link 
+                                href={link.href}
+                                target={isExternal ? "_blank" : undefined}
+                                rel={isExternal ? "noopener noreferrer" : undefined}
+                                className="text-[0.9375rem] text-[#4d5c7e] font-medium transition-all duration-200 hover:text-[#0A4EE4] hover:translate-x-1 inline-block"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {link.label}
+                              </Link>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   ))}
@@ -187,20 +192,25 @@ export function MobileMegaMenu({ closeMenu, isDark = false }: { closeMenu: () =>
                     {column.title}
                   </h4>
                   <ul className="flex flex-col gap-2.5 mt-1">
-                    {column.links.map((link, linkIdx) => (
-                      <li key={linkIdx}>
-                        <Link 
-                          href={link.href}
-                          className={cn(
-                            "text-[0.875rem] font-medium transition-colors",
-                            isDark ? "text-white/70 hover:text-white" : "text-[#4d5c7e] hover:text-[#0A4EE4]"
-                          )}
-                          onClick={closeMenu}
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
+                    {column.links.map((link, linkIdx) => {
+                      const isExternal = link.href.startsWith("http");
+                      return (
+                        <li key={linkIdx}>
+                          <Link 
+                            href={link.href}
+                            target={isExternal ? "_blank" : undefined}
+                            rel={isExternal ? "noopener noreferrer" : undefined}
+                            className={cn(
+                              "text-[0.875rem] font-medium transition-colors",
+                              isDark ? "text-white/70 hover:text-white" : "text-[#4d5c7e] hover:text-[#0A4EE4]"
+                            )}
+                            onClick={closeMenu}
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}
